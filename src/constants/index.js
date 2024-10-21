@@ -20,4 +20,19 @@ const primary_sidebar_links = [
  { name: "Vouchers", url: "/vouchers" },
  { name: "Panel Settings", url: "/panel-settings" },
 ];
-export { primary_sidebar_links };
+
+const main_sidebar_links = [
+ "Active Users",
+ "New Sign-Up",
+ "Courses",
+ "Discuss",
+ "Challenges",
+ "Jobs",
+ "Internships",
+ "Projects",
+ "My Profile",
+ "Pro Benefits",
+ "Notifications",
+];
+
+export { primary_sidebar_links, main_sidebar_links };

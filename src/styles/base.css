@@ -8,13 +8,14 @@
 }
 
 :root {
-    --primary-color: "#0f172a"
-    --secondary-color: "#1e293b"
-    --tertiary-color: "#334155"
+    --primary-color: "#020617"
+    --secondary-color: "#0f172a"
+    --tertiary-color: "#1e293b"
     --head-text: 21px
     --sub-head-text: 19px
     --normal-text: 15px
 } 
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -28,12 +29,10 @@ body {
 .button {
     min-height: 45px;
     width: 100%;
-    text-align: start;
+    background-color:#0f172a; 
     border-radius: 8px;
     font-size: 15px;
-    font-weight: 600;
     color: #fff; /* Text color */
-    background-color: var(--tertiary-color); /* Button background */
     padding: 10px 12px;
     border: none; /* No border by default */
     cursor: pointer; /* Pointer on hover */

@@ -10,41 +10,43 @@
   <title>NowUrTurn | Dashboard</title>
  </head>
  <body class="bg-primary">
-  <header class="fixed">
-   <nav class="flex bg-tertiary justify-start items-center h-16 w-screen px-3">
-    <div class="h-10 w-10 overflow-hidden">
-     <img
-      src="/assets/logo.png"
-      alt="logo"
-      class="block object-cover size-10"
-     />
-    </div>
-    <h1 class="font-bold text-[21px]">
-     Now<span class="text-pink-500">Ur</span>Turn
-    </h1>
-   </nav>
-  </header>
-  <section class="pt-16 flex">
+  <nav
+   class="flex fixed bg-tertiary justify-start items-center h-16 w-screen px-3"
+  >
+   <div class="h-10 w-10 overflow-hidden">
+    <img src="/assets/logo.png" alt="logo" class="block object-cover size-10" />
+   </div>
+   <h1 class="font-bold text-[21px]">
+    Now<span class="text-pink-500">Ur</span>Turn
+   </h1>
+  </nav>
+  <section class="flex">
    <aside
     id="ps"
-    class="sidebar bg-secondary w-1/6 p-2 h-screen overflow-y-auto space-y-2"
-   ></aside>
-   <main class="w-full">
+    class="bg-secondary w-1/6 pt-[4.5rem] px-2 h-screen overflow-y-auto space-y-2"
+   >
+    <!-- primary section -->
+   </aside>
+   <main class="w-full pt-[4.5rem] h-screen overflow-hidden">
     <div class="my-7">
      <h1 class="text-yellow-500 text-sub-head text-center font-semibold">
+      <!-- todo: make it dynamic -->
       Dashboard
      </h1>
     </div>
-    <!-- drop-down buttons -->
-    <div>
-     <!-- will add it later  -->
+    <div class="pl-10 flex justify-start items-center gap-3">
+     <!-- drop-down buttons -->
+     <div class="inline-block bg-white h-5 w-5 rounded-md"></div>
+     <button class="w-fit">Year</button>
+     <button class="w-fit">Month</button>
+     <button class="w-fit">Day</button>
     </div>
     <!-- main section -->
-    <div>
-     <div>
+    <div class="flex">
+     <div class="w-full">
       <!-- chart -->
      </div>
-     <aside>
+     <aside id="ms" class="mx-3 w-[20%] p-2 h-screen overflow-y-auto space-y-2">
       <!-- sidebar -->
      </aside>
     </div>
