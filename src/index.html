@@ -6,30 +6,31 @@
   <link href="./styles/base.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-  <title>Admin Dashboard</title>
+  <script src="./scripts/index.js" type="module" defer></script>
+  <title>NowUrTurn | Dashboard</title>
  </head>
  <body class="bg-primary">
-  <main>
-   <header>
-    <nav class="flex bg-tertiary justify-start items-center h-16">
-     <div class="h-10 w-10 overflow-hidden">
-      <img
-       src="/assets/logo.png"
-       alt="logo"
-       class="block object-cover size-10"
-      />
-     </div>
-     <h1 class="font-bold text-[21px]">
-      Now<span class="text-pink-500">Ur</span>Turn
-     </h1>
-    </nav>
-   </header>
-   <aside>
-    <button class="button">Something</button>
-   </aside>
+  <header class="fixed">
+   <nav class="flex bg-tertiary justify-start items-center h-16 w-screen px-3">
+    <div class="h-10 w-10 overflow-hidden">
+     <img
+      src="/assets/logo.png"
+      alt="logo"
+      class="block object-cover size-10"
+     />
+    </div>
+    <h1 class="font-bold text-[21px]">
+     Now<span class="text-pink-500">Ur</span>Turn
+    </h1>
+   </nav>
+  </header>
+  <main class="pt-16">
+   <aside
+    id="ps"
+    class="sidebar bg-secondary w-1/6 p-2 h-screen overflow-y-auto space-y-2"
+   ></aside>
    <section></section>
    <aside></aside>
-   <footer></footer>
   </main>
  </body>
 </html>

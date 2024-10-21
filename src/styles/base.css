@@ -1,5 +1,3 @@
-@import url("./styles/theme.css");
-
 * {
  box-sizing: border-box;
  margin: 0;
@@ -16,8 +14,13 @@
     --head-text: 21px
     --sub-head-text: 19px
     --normal-text: 15px
+} 
+::-webkit-scrollbar {
+  display: none;
 }
 body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     font-size: var(--normal-text);
     color: white;   
     font-family: monospace;
@@ -25,12 +28,13 @@ body {
 
 .button {
     height: 45px;
+    width: 100%;
+    text-align: start;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 600;
-    font-family: Roboto; /* Font family added */
     color: #fff; /* Text color */
-    background-color: #1c202c; /* Button background */
+    background-color: var(--tertiary-color); /* Button background */
     padding: 10px 12px;
     border: none; /* No border by default */
     cursor: pointer; /* Pointer on hover */
