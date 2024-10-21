@@ -1,5 +1,5 @@
 const primary_sidebar_links = [
- { name: "Dashboard", url: "/dashboard" },
+ { name: "Dashboard", url: "/" },
  { name: "Product Category", url: "/product-category" },
  { name: "Contribution Community", url: "/contribution-community" },
  { name: "Discuss", url: "/discuss" },

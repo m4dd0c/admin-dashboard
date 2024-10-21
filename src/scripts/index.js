@@ -6,9 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
  // Switch page function for primary sidebar
  const switchPage = (url, elem = null) => {
-  window.location.href = "/src";
-     //todo: 
+  window.location.href = url;
+  //todo:
   elem && elem.classList.add("selected");
+ };
+
+ const highLightBtn = ({ link, button }) => {
+  let path = window.location.href;
+  path = path.split("src").pop();
+  if (path === link.url) button.classList.add("selected");
+  else {
+   if ([...button.classList].includes("selected"))
+    button.classList.remove("selected");
+  }
  };
 
  // Primary sidebar construction
@@ -18,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const textNode = document.createTextNode(link.name);
   elem.appendChild(textNode);
   primary_sidebar.appendChild(elem);
+  // highlight the selected button
+  highLightBtn({ link, button: elem });
   elem.onclick = () => {
    switchPage(link.url, elem);
   };
