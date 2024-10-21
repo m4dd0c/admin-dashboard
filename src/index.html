@@ -2,6 +2,10 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8" />
+  <link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <link href="../dist/output.css" rel="stylesheet" />
   <link href="./styles/base.css" rel="stylesheet" />
   <script src="./scripts/index.js" type="module" defer></script>
@@ -15,7 +19,11 @@
    class="flex fixed bg-tertiary justify-start items-center h-16 w-screen px-3"
   >
    <div class="h-10 w-10 overflow-hidden">
-    <img src="/assets/logo.png" alt="logo" class="block object-cover size-10" />
+    <img
+     src="/assets/logo.png"
+     alt="logo"
+     class="block object-cover size-full"
+    />
    </div>
    <h1 class="font-bold text-[21px]">
     Now<span class="text-pink-500">Ur</span>Turn
@@ -36,7 +44,11 @@
     </div>
     <div class="pl-10 flex justify-start items-center gap-3">
      <!-- drop-down buttons -->
-     <div class="inline-block bg-white h-5 w-5 rounded-md"></div>
+     <i
+      class="fa fa-circle-o-notch cursor-pointer"
+      style="color: yellow"
+      id="spinner"
+     ></i>
      <button class="w-fit">Year</button>
      <button class="w-fit">Month</button>
      <button class="w-fit">Day</button>
@@ -45,7 +57,7 @@
     <div class="flex">
      <div class="mx-4 w-full pt-10">
       <!-- chart -->
-      <canvas id="chart"></canvas>
+      <canvas id="chart" class="bg-secondary"></canvas>
      </div>
      <aside id="ms" class="mx-3 w-[20%] p-2 h-screen overflow-y-auto space-y-2">
       <!-- sidebar -->

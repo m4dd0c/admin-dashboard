@@ -3,6 +3,7 @@ import {
  primary_sidebar_links,
 } from "../constants/index.js";
 import { buildChart } from "./chart.js";
+import { generateChartData } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
  //  const primary_sidebar = document.querySelector("aside.sidebar");
@@ -47,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   elem.classList.add("selected");
   // fetch the data and update chart
-  // todo:
   buildChart({ data: spec.data });
  };
 
@@ -64,4 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
  });
  // printing chart
  buildChart({ data: main_sidebar_links[0].data });
+
+ // spinner
+ const spinner = document.getElementById("spinner");
+ spinner.onclick = () => {
+  //  if(elem.classList.contains('fa-spin'))
+  spinner.classList.add("fa-spin");
+  setTimeout(() => {
+   spinner.classList.remove("fa-spin");
+   buildChart({ data: generateChartData() });
+  }, 1900);
+ };
 });
