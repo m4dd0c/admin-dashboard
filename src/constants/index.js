@@ -1,7 +1,7 @@
-import { formatNumber } from "../scripts/utils.js";
+import { formatNumber, generateChartData } from "../scripts/utils.js";
 
 const primary_sidebar_links = [
- { name: "Dashboard", url: "/" },
+ { name: "Dashboard", url: "/src/" },
  { name: "Product Category", url: "/product-category" },
  { name: "Contribution Community", url: "/contribution-community" },
  { name: "Discuss", url: "/discuss" },
@@ -24,44 +24,51 @@ const primary_sidebar_links = [
 ];
 
 const main_sidebar_links = [
- "Active Users",
- "New Sign-Up",
- "Courses",
- "Discuss",
- "Challenges",
- "Jobs",
- "Internships",
- "Projects",
- "My Profile",
- "Pro Benefits",
- "Notifications",
+ {
+  id: 1,
+  title: "Active Users",
+  data: generateChartData(),
+ },
+ {
+  id: 2,
+  title: "New Sign-Up",
+  data: generateChartData(),
+ },
+ {
+  id: 3,
+  title: "Courses",
+  data: generateChartData(),
+ },
+ {
+  id: 4,
+  title: "Discuss",
+  data: generateChartData(),
+ },
+ {
+  id: 5,
+  title: "Challenge",
+  data: generateChartData(),
+ },
+ {
+  id: 6,
+  title: "Jobs",
+  data: generateChartData(),
+ },
+ {
+  id: 7,
+  title: "Internships",
+  data: generateChartData(),
+ },
+ {
+  id: 8,
+  title: "Projects",
+  data: generateChartData(),
+ },
+ {
+  id: 9,
+  title: "My Profile",
+  data: generateChartData(),
+ },
 ];
 
-// Chart data with formatted hours
-const chart_data = [
- { hours: formatNumber(1), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(2), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(3), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(4), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(5), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(6), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(7), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(8), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(9), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(10), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(11), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(12), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(13), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(14), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(15), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(16), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(17), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(18), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(19), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(20), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(21), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(22), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(23), users: Math.floor(Math.random() * 5000) },
- { hours: formatNumber(0), users: Math.floor(Math.random() * 5000) },
-];
-export { primary_sidebar_links, main_sidebar_links, chart_data };
+export { primary_sidebar_links, main_sidebar_links };

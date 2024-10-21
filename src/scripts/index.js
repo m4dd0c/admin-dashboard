@@ -1,7 +1,6 @@
 import {
  main_sidebar_links,
  primary_sidebar_links,
- chart_data,
 } from "../constants/index.js";
 import { buildChart } from "./chart.js";
 
@@ -11,20 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
  const main_sidebar = document.getElementById("ms");
 
  // Switch page function for primary sidebar
- const switchPage = (url, elem = null) => {
+ const switchPage = ({ url, elem }) => {
   window.location.href = url;
-  //todo:
-  elem && elem.classList.add("selected");
+  // removing selected className from old button
+  primary_sidebar.childNodes.forEach((node) => {
+   if (node.classList && node.classList.contains("selected"))
+    node.classList.remove("selected");
+  });
+  // adding className to new button
+  elem.classList.add("selected");
  };
 
- const highLightBtn = ({ link, button }) => {
-  let path = window.location.href;
-  path = path.split("src").pop();
-  if (path === link.url) button.classList.add("selected");
-  else {
-   if ([...button.classList].includes("selected"))
-    button.classList.remove("selected");
-  }
+ // adding selected className to the btn having url prop matching to the pathname
+ const highlightBtn = ({ url, elem }) => {
+  const path = window.location.pathname;
+  if (path === url) elem.classList.add("selected");
  };
 
  // Primary sidebar construction
@@ -34,26 +34,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const textNode = document.createTextNode(link.name);
   elem.appendChild(textNode);
   primary_sidebar.appendChild(elem);
-  // highlight the selected button
-  highLightBtn({ link, button: elem });
-  elem.onclick = () => {
-   switchPage(link.url, elem);
-  };
+  // highlight button based on the path
+  highlightBtn({ url: link.url, elem });
+  elem.onclick = () => switchPage({ url: link.url, elem });
  });
 
+ // changeActiveSpecification
+ const changeActiveSpecification = ({ spec, elem }) => {
+  main_sidebar.childNodes.forEach((node) => {
+   if (node.classList && node.classList.contains("selected"))
+    node.classList.remove("selected");
+  });
+  elem.classList.add("selected");
+  // fetch the data and update chart
+  // todo:
+  buildChart({ data: spec.data });
+ };
+
  // main-sidebar
- main_sidebar_links.map((link) => {
+ main_sidebar_links.map((spec) => {
   const elem = document.createElement("button");
   elem.classList.add("button");
-  const textNode = document.createTextNode(link);
+  const textNode = document.createTextNode(spec.title);
   elem.appendChild(textNode);
   main_sidebar.appendChild(elem);
-  // highlight the selected button
-  //   highLightBtn({ link, button: elem });
-  //   elem.onclick = () => {
-  //    switchPage(link, elem);
-  //   };
+  // making activeUser initially selected
+  if (spec.id === 1) elem.classList.add("selected");
+  elem.onclick = () => changeActiveSpecification({ spec, elem });
  });
  // printing chart
- buildChart({ data: chart_data });
+ buildChart({ data: main_sidebar_links[0].data });
 });

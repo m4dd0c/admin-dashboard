@@ -7,6 +7,9 @@ Chart.defaults.backgroundColor = "yellow";
 Chart.defaults.color = "#fff";
 
 export const buildChart = async ({ data }) => {
+ if (Chart.getChart(ctx)) {
+  Chart.getChart(ctx)?.destroy();
+ }
  new Chart(ctx, {
   type: "bar",
   options: {

@@ -11,3 +11,15 @@ export const minimizeNumber = (value) => {
   return value.toString(); // For values less than 1000
  }
 };
+
+export const generateChartData = () => {
+ const chart_data = [];
+
+ for (let i = 0; i < 24; i++) {
+  chart_data.push({
+   hours: formatNumber(i),
+   users: Math.floor(Math.random() * 5000),
+  });
+ }
+ return chart_data;
+};
