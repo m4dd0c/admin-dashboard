@@ -1,7 +1,9 @@
 import {
  main_sidebar_links,
  primary_sidebar_links,
+ chart_data,
 } from "../constants/index.js";
+import { buildChart } from "./chart.js";
 
 document.addEventListener("DOMContentLoaded", () => {
  //  const primary_sidebar = document.querySelector("aside.sidebar");
@@ -52,4 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //    switchPage(link, elem);
   //   };
  });
+ // printing chart
+ buildChart({ data: chart_data });
 });

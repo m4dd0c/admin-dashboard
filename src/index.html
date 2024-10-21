@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <link href="../dist/output.css" rel="stylesheet" />
   <link href="./styles/base.css" rel="stylesheet" />
+  <script src="./scripts/index.js" type="module" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-  <script src="./scripts/index.js" type="module" defer></script>
   <title>NowUrTurn | Dashboard</title>
  </head>
  <body class="bg-primary">
@@ -30,7 +31,6 @@
    <main class="w-full pt-[4.5rem] h-screen overflow-hidden">
     <div class="my-7">
      <h1 class="text-yellow-500 text-sub-head text-center font-semibold">
-      <!-- todo: make it dynamic -->
       Dashboard
      </h1>
     </div>
@@ -45,6 +45,7 @@
     <div class="flex">
      <div class="w-full">
       <!-- chart -->
+      <canvas id="chart"></canvas>
      </div>
      <aside id="ms" class="mx-3 w-[20%] p-2 h-screen overflow-y-auto space-y-2">
       <!-- sidebar -->
