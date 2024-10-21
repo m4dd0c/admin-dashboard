@@ -1,3 +1,5 @@
+import { formatNumber } from "../scripts/utils.js";
+
 const primary_sidebar_links = [
  { name: "Dashboard", url: "/" },
  { name: "Product Category", url: "/product-category" },
@@ -35,13 +37,31 @@ const main_sidebar_links = [
  "Notifications",
 ];
 
+// Chart data with formatted hours
 const chart_data = [
- { year: 2010, count: 10 },
- { year: 2011, count: 20 },
- { year: 2012, count: 15 },
- { year: 2013, count: 25 },
- { year: 2014, count: 22 },
- { year: 2015, count: 30 },
- { year: 2016, count: 28 },
+ { hours: formatNumber(1), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(2), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(3), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(4), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(5), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(6), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(7), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(8), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(9), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(10), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(11), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(12), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(13), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(14), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(15), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(16), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(17), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(18), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(19), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(20), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(21), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(22), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(23), users: Math.floor(Math.random() * 5000) },
+ { hours: formatNumber(0), users: Math.floor(Math.random() * 5000) },
 ];
 export { primary_sidebar_links, main_sidebar_links, chart_data };
