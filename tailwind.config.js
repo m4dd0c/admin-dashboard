@@ -2,7 +2,13 @@
 export default {
  content: ["./src/**/*.{html,js}"],
  theme: {
-  extend: {},
+  extend: {
+   fontSize: {
+    head: "var(--head-text)",
+    "sub-head": "var(--sub-head-text)",
+    reg: "var(--reg-text)",
+   },
+  },
  },
  plugins: [],
 };

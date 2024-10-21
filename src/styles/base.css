@@ -1,7 +1,54 @@
+@import url("./styles/theme.css");
+
 * {
  box-sizing: border-box;
  margin: 0;
- padding: 10rem;
+ padding: 0;
  text-decoration: none;
- list-style: none;
+ list-style:none;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary-color: "#0f172a"
+    --secondary-color: "#1e293b"
+    --tertiary-color: "#334155"
+    --head-text: 21px
+    --sub-head-text: 19px
+    --normal-text: 15px
+}
+body {
+    font-size: var(--normal-text);
+    color: white;   
+    font-family: monospace;
+}
+
+.button {
+    height: 45px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: Roboto; /* Font family added */
+    color: #fff; /* Text color */
+    background-color: #1c202c; /* Button background */
+    padding: 10px 12px;
+    border: none; /* No border by default */
+    cursor: pointer; /* Pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.button.selected {
+    color: #000; /* Text color remains black */
+    background-color: #fff; /* Background becomes white */
+}
+
+.button:active {
+    color: #000; /* Changes text color on click */
+    background-color: #00d8ff; /* Changes background to blue */
+    transform: scale(0.98); /* Slightly reduces size for a click effect */
+    transition: all 0.2s ease; /* Smooth transition */
+}
+.button:hover {
+    border: 2px solid #00d8ff; /* Adds border on hover */
+    color: #00d8ff; /* Change text color */
 }
