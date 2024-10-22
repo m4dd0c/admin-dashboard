@@ -68,7 +68,6 @@ export const buildChart = async ({ data }) => {
 
  const options = {
   scales: {
-   backgroundColor: "red",
    y: {
     ticks: {
      callback: function (value) {
