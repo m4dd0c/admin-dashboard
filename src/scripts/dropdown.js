@@ -79,22 +79,21 @@ const openDropdown = (target) => {
  if (target === "yyyy") {
   yearsDropdown.classList.remove("hidden");
   // hidding other than year menu
-  day.parentElement.classList.remove("z-30");
-
-  month.parentElement.classList.remove("z-30");
-  year.parentElement.classList.add("z-30");
+  day.parentElement.style.zIndex = 1;
+  month.parentElement.style.zIndex = 1;
+  year.parentElement.style.zIndex = 30;
  } else if (target === "mm") {
   monthsDropdown.classList.remove("hidden");
   // hidding other than month menu
-  day.parentElement.classList.remove("z-30");
-  month.parentElement.classList.add("z-30");
-  year.parentElement.classList.remove("z-30");
+  day.parentElement.style.zIndex = 1;
+  month.parentElement.style.zIndex = 30;
+  year.parentElement.style.zIndex = 1;
  } else if (target === "dd") {
   daysDropdown.classList.remove("hidden");
   // hidding other than day menu
-  day.parentElement.classList.add("z-30");
-  month.parentElement.classList.remove("z-30");
-  year.parentElement.classList.remove("z-30");
+  day.parentElement.style.zIndex = 30;
+  month.parentElement.style.zIndex = 1;
+  year.parentElement.style.zIndex = 1;
  }
  overlay.classList.remove("hidden");
 };
