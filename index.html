@@ -51,8 +51,9 @@
       id="spinner"
      ></i>
      <div class="flex gap-3" id="yyyymmdd">
+      <div id="overlay" class="hidden h-screen w-screen top-0 left-0 bottom-0 right-0 absolute bg-[rgba(0,0,0,0.5)] z-20"></div>
       <!-- years dropdown -->
-      <div>
+      <div class="z-30">
        <button id="yyyy" class="button wfit flex items-center space-x-2">
         <p>Year</p>
         <i class="fa fa-sort-down fa-solid mb-1"></i>
@@ -60,7 +61,7 @@
        <div class="dropdown hidden" id="years-dropdown"></div>
       </div>
       <!-- months dropdown -->
-      <div>
+      <div class="z-30">
        <button id="mm" class="button wfit flex items-center space-x-2">
         <p>Month</p>
         <i class="fa fa-sort-down fa-solid mb-1"></i>
@@ -68,7 +69,7 @@
        <div class="dropdown hidden" id="months-dropdown"></div>
       </div>
       <!-- days dropdown -->
-      <div>
+      <div class="z-30">
        <button id="dd" class="button wfit flex items-center space-x-2">
         <p>Day</p>
         <i class="fa fa-sort-down fa-solid mb-1"></i>
@@ -87,7 +88,7 @@
       <!-- sidebar -->
      </aside>
     </div>
-   </main>
+   </div>
   </section>
  </body>
 </html>

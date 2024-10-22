@@ -7,6 +7,9 @@ const year = document.querySelector("#yyyy");
 const month = document.querySelector("#mm");
 const day = document.querySelector("#dd");
 
+// overlay div
+const overlay = document.querySelector("#overlay");
+
 // dropdown divs
 const yearsDropdown = document.querySelector("#years-dropdown");
 const monthsDropdown = document.querySelector("#months-dropdown");
@@ -64,12 +67,19 @@ const shutDropdown = (target) => {
  if (target === "yyyy") yearsDropdown.classList.add("hidden");
  else if (target === "mm") monthsDropdown.classList.add("hidden");
  else if (target === "dd") daysDropdown.classList.add("hidden");
+ // check if all dropdowns are closed than only hide overlay
+ const isClosed =
+  yearsDropdown.classList.contains("hidden") &&
+  monthsDropdown.classList.contains("hidden") &&
+  daysDropdown.classList.contains("hidden");
+ isClosed && overlay.classList.add("hidden");
 };
 
 const openDropdown = (target) => {
  if (target === "yyyy") yearsDropdown.classList.remove("hidden");
  else if (target === "mm") monthsDropdown.classList.remove("hidden");
  else if (target === "dd") daysDropdown.classList.remove("hidden");
+ overlay.classList.remove("hidden");
 };
 
 const toggleDropdown = (target) => {
@@ -85,6 +95,14 @@ const toggleDropdown = (target) => {
  }
 };
 
+// closing all the dropdown if overlay is clicked
+overlay.onclick = () => {
+ shutDropdown("yyyy");
+ shutDropdown("mm");
+ shutDropdown("dd");
+};
+
+// dropdown invoking
 year.onclick = () => toggleDropdown("yyyy");
 month.onclick = () => toggleDropdown("mm");
 day.onclick = () => toggleDropdown("dd");
