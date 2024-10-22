@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
    day.children[0].textContent = selectedDay;
    shutDropdown("dd");
   }
+  buildChart({ data: generateChartData() });
  };
 
  const createDropdown = (target) => {
