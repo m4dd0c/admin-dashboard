@@ -73,13 +73,16 @@ const openDropdown = (target) => {
 };
 
 const toggleDropdown = (target) => {
- const isClosed =
-  yearsDropdown.classList.contains("hidden") ||
-  monthsDropdown.classList.contains("hidden") ||
-  daysDropdown.classList.contains("hidden");
-
- if (isClosed) openDropdown(target);
- else shutDropdown(target);
+ if (target === "yyyy") {
+  if (yearsDropdown.classList.contains("hidden")) openDropdown(target);
+  else shutDropdown(target);
+ } else if (target === "mm") {
+  if (monthsDropdown.classList.contains("hidden")) openDropdown(target);
+  else shutDropdown(target);
+ } else {
+  if (daysDropdown.classList.contains("hidden")) openDropdown(target);
+  else shutDropdown(target);
+ }
 };
 
 year.onclick = () => toggleDropdown("yyyy");
