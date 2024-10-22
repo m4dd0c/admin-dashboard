@@ -1,7 +1,7 @@
 import { formatNumber, generateChartData } from "../scripts/utils.js";
 
 const primary_sidebar_links = [
- { name: "Dashboard", url: "/src/" },
+ { name: "Dashboard", url: "/" },
  { name: "Product Category", url: "/product-category" },
  { name: "Contribution Community", url: "/contribution-community" },
  { name: "Discuss", url: "/discuss" },
