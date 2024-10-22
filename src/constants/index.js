@@ -71,4 +71,53 @@ const main_sidebar_links = [
  },
 ];
 
-export { primary_sidebar_links, main_sidebar_links };
+const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+const months = [
+ "January",
+ "February",
+ "March",
+ "April",
+ "May",
+ "June",
+ "July",
+ "August",
+ "September",
+ "October",
+ "November",
+ "December",
+];
+
+const days = [
+ formatNumber(1),
+ formatNumber(2),
+ formatNumber(3),
+ formatNumber(4),
+ formatNumber(5),
+ formatNumber(6),
+ formatNumber(7),
+ formatNumber(8),
+ formatNumber(9),
+ formatNumber(10),
+ formatNumber(11),
+ formatNumber(12),
+ formatNumber(13),
+ formatNumber(14),
+ formatNumber(15),
+ formatNumber(16),
+ formatNumber(17),
+ formatNumber(18),
+ formatNumber(19),
+ formatNumber(20),
+ formatNumber(21),
+ formatNumber(22),
+ formatNumber(23),
+ formatNumber(24),
+ formatNumber(25),
+ formatNumber(26),
+ formatNumber(27),
+ formatNumber(28),
+ formatNumber(29),
+ formatNumber(30),
+];
+
+export { primary_sidebar_links, main_sidebar_links, days, years, months };

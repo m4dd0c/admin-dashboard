@@ -34,7 +34,7 @@
     id="ps"
     class="bg-secondary w-1/6 pt-[4.5rem] px-2 h-screen overflow-y-auto space-y-2"
    >
-    <!-- primary section -->
+    <!-- primary sidebar -->
    </aside>
    <main class="w-full pt-[4.5rem] h-screen overflow-hidden">
     <div class="my-7">
@@ -49,9 +49,37 @@
       style="color: yellow"
       id="spinner"
      ></i>
-     <button class="w-fit">Year</button>
-     <button class="w-fit">Month</button>
-     <button class="w-fit">Day</button>
+     <div class="flex gap-3" id="yyyymmdd">
+      <!-- years dropdown -->
+      <div>
+       <button id="yyyy" class="button wfit flex items-center space-x-2">
+        <p>Year</p>
+        <i class="fa fa-sort-down fa-solid mb-1"></i>
+       </button>
+       <div>
+        <div class="dropdown hidden" id="years-dropdown"></div>
+        <!-- <div
+         class="h-screen w-screen absolute bg-[rgba(0,0,0,0.8)] top-0 left-0 right-0 bottom-0"
+        ></div> -->
+       </div>
+      </div>
+      <div>
+       <!-- months dropdown -->
+       <button id="mm" class="button wfit flex items-center space-x-2">
+        <p>Month</p>
+        <i class="fa fa-sort-down fa-solid mb-1"></i>
+       </button>
+       <div class="dropdown hidden" id="months-dropdown"></div>
+      </div>
+      <div>
+       <!-- days dropdown -->
+       <button id="dd" class="button wfit flex items-center space-x-2">
+        <p>Day</p>
+        <i class="fa fa-sort-down fa-solid mb-1"></i>
+       </button>
+       <div class="dropdown hidden" id="days-dropdown"></div>
+      </div>
+     </div>
     </div>
     <!-- main section -->
     <div class="flex">

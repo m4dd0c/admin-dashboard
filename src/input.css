@@ -14,4 +14,7 @@
  .bg-tertiary {
   @apply bg-slate-800;
  }
+ .dropdown {
+  @apply rounded-md absolute bg-tertiary;
+ }
 }
