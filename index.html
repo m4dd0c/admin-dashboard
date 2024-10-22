@@ -1,94 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <link
-   rel="stylesheet"
-   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-  <link href="./dist/output.css" rel="stylesheet" />
-  <link href="/src/styles/base.css" rel="stylesheet" />
-  <script src="/src/scripts/index.js" type="module" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-  <title>NowUrTurn | Dashboard</title>
- </head>
- <body class="bg-primary">
-  <nav
-   class="flex fixed bg-tertiary justify-start items-center h-16 w-screen px-3"
-  >
-   <div class="h-10 w-10 overflow-hidden">
-    <img
-     src="/assets/logo.png"
-     alt="logo"
-     class="block object-cover size-full"
-    />
-   </div>
 
-   <h1 class="font-bold text-[21px]">
-    Now<span class="text-pink-500 text-[21px]">Ur</span>Turn
-   </h1>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <link href="./src/styles/base.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./src/scripts/index.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+  <title>NowUrTurn | Dashboard</title>
+</head>
+
+<body class="bg-primary">
+  <nav class="flex fixed bg-tertiary justify-start items-center h-16 w-screen px-3">
+    <div class="h-10 w-10 overflow-hidden">
+      <img src="./assets/logo.png" alt="logo" class="block object-cover size-full" />
+    </div>
+
+    <h1 class="font-bold text-[21px]">
+      Now<span class="text-pink-500 text-[21px]">Ur</span>Turn
+    </h1>
   </nav>
   <section class="flex">
-   <aside
-    id="ps"
-    class="bg-secondary w-1/6 pt-[4.5rem] px-2 h-screen overflow-y-auto space-y-2"
-   >
-    <!-- primary sidebar -->
-   </aside>
-   <main class="w-full pt-[4.5rem] h-screen overflow-hidden">
-    <div class="my-7">
-     <h1 class="text-yellow-500 text-[19px] text-center font-semibold">
-      Dashboard
-     </h1>
-    </div>
-    <div class="pl-10 flex justify-start items-center gap-3">
-     <!-- drop-down buttons -->
-     <i
-      class="fa fa-circle-o-notch cursor-pointer"
-      style="color: yellow"
-      id="spinner"
-     ></i>
-     <div class="flex gap-3" id="yyyymmdd">
-      <div id="overlay" class="hidden h-screen w-screen top-0 left-0 bottom-0 right-0 absolute bg-[rgba(0,0,0,0.5)] z-20"></div>
-      <!-- years dropdown -->
-      <div class="">
-       <button id="yyyy" class="button wfit flex items-center space-x-2">
-        <p>Year</p>
-        <i class="fa fa-sort-down fa-solid mb-1"></i>
-       </button>
-       <div class="dropdown hidden" id="years-dropdown"></div>
+    <aside id="ps" class="bg-secondary w-1/6 pt-[4.5rem] px-2 h-screen overflow-y-auto space-y-2">
+      <!-- primary sidebar -->
+    </aside>
+    <main class="w-full pt-[4.5rem] h-screen overflow-hidden">
+      <div class="my-7">
+        <h1 class="text-yellow-500 text-[19px] text-center font-semibold">
+          Dashboard
+        </h1>
       </div>
-      <!-- months dropdown -->
-      <div class="">
-       <button id="mm" class="button wfit flex items-center space-x-2">
-        <p>Month</p>
-        <i class="fa fa-sort-down fa-solid mb-1"></i>
-       </button>
-       <div class="dropdown hidden" id="months-dropdown"></div>
+      <div class="pl-10 flex justify-start items-center gap-3">
+        <!-- drop-down buttons -->
+        <i class="fa fa-circle-o-notch cursor-pointer" style="color: yellow" id="spinner"></i>
+        <div class="flex gap-3" id="yyyymmdd">
+          <div id="overlay"
+            class="hidden h-screen w-screen top-0 left-0 bottom-0 right-0 absolute bg-[rgba(0,0,0,0.5)] z-20"></div>
+          <!-- years dropdown -->
+          <div class="">
+            <button id="yyyy" class="button wfit flex items-center space-x-2">
+              <p>Year</p>
+              <i class="fa fa-sort-down fa-solid mb-1"></i>
+            </button>
+            <div class="dropdown hidden" id="years-dropdown"></div>
+          </div>
+          <!-- months dropdown -->
+          <div class="">
+            <button id="mm" class="button wfit flex items-center space-x-2">
+              <p>Month</p>
+              <i class="fa fa-sort-down fa-solid mb-1"></i>
+            </button>
+            <div class="dropdown hidden" id="months-dropdown"></div>
+          </div>
+          <!-- days dropdown -->
+          <div class="">
+            <button id="dd" class="button wfit flex items-center space-x-2">
+              <p>Day</p>
+              <i class="fa fa-sort-down fa-solid mb-1"></i>
+            </button>
+            <div class="dropdown hidden" id="days-dropdown"></div>
+          </div>
+        </div>
       </div>
-      <!-- days dropdown -->
-      <div class="">
-       <button id="dd" class="button wfit flex items-center space-x-2">
-        <p>Day</p>
-        <i class="fa fa-sort-down fa-solid mb-1"></i>
-       </button>
-       <div class="dropdown hidden" id="days-dropdown"></div>
+      <!-- main section -->
+      <div class="flex">
+        <div class="mx-4 w-full pt-10">
+          <!-- chart -->
+          <canvas id="chart"></canvas>
+        </div>
+        <aside id="ms" class="mx-3 w-[20%] p-2 h-screen overflow-y-auto space-y-2">
+          <!-- sidebar -->
+        </aside>
       </div>
-     </div>
-    </div>
-    <!-- main section -->
-    <div class="flex">
-     <div class="mx-4 w-full pt-10">
-      <!-- chart -->
-      <canvas id="chart"></canvas>
-     </div>
-     <aside id="ms" class="mx-3 w-[20%] p-2 h-screen overflow-y-auto space-y-2">
-      <!-- sidebar -->
-     </aside>
-    </div>
-   </div>
+      </div>
   </section>
- </body>
+  <script src="./dist/bundle.js"></script>
+</body>
+
 </html>
